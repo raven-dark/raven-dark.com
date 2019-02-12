@@ -1,0 +1,19 @@
+@import 'variables';
+
+html,
+body {
+  background-color: $background;
+  color: $text;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  margin: 0 15px 0;
+  padding: 0;
+}
+
+h1,h2,h3,h4,h5 {
+  font-weight: 300;
+}
+
+a {
+  color: $link;
+}
