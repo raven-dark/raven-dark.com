@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "local": "ng serve  --host 0.0.0.0 --port 4202 --public $1",
-    "build": "ng build --prod",
+    "build": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -19,6 +19,7 @@
     "@angular/compiler": "~8.2.14",
     "@angular/core": "~8.2.14",
     "@angular/forms": "^8.2.14",
+    "@angular/http": "^7.2.15",
     "@angular/material": "^8.2.3",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",

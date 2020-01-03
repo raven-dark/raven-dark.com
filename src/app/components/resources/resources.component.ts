@@ -2,6 +2,12 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { ApiService } from '../../services/api.service'
 
+type Pool = {
+  poolName: string
+  url: string
+  searchStrings: Array<string>
+}
+
 type Status = {
   version: number
   protocolversion: number
@@ -19,25 +25,42 @@ type Status = {
 }
 
 @Component({
-  selector: 'app-basics',
-  templateUrl: './basics.component.html',
-  styleUrls: ['./basics.component.scss']
+  selector: 'app-resources',
+  templateUrl: './resources.component.html',
+  styleUrls: ['./resources.component.scss']
 })
-export class BasicsComponent implements OnInit, AfterViewInit {
+export class ResourcesComponent implements OnInit, AfterViewInit {
 
+  pools: Array<Pool> = []
+  supply: number
   status: Status
-  powReward: number = 0;
-  mnReward: number = 0;
 
   constructor(
     private apiService: ApiService
   ) { }
 
   ngOnInit() {
+
   }
 
   ngAfterViewInit() {
+    this.getPools()
+    this.getSupply()
     this.getStatus()
+  }
+
+  getPools() {
+    this.apiService.getData('https://raw.githubusercontent.com/raven-dark/insight-api/master/pools.json')
+    .subscribe((result: Array<Pool>) => {
+      this.pools = result
+    })
+  }
+
+  getSupply() {
+    this.apiService.getData('http://explorer.raven-dark.com/api/supply')
+    .subscribe((result: number) => {
+      this.supply = result
+    })
   }
 
   getStatus() {
@@ -45,9 +68,6 @@ export class BasicsComponent implements OnInit, AfterViewInit {
     .subscribe((result: any) => {
       this.status = result.info
       this.status.reward = this.status.reward / 10**8
-      this.powReward = this.status.reward * .85
-      this.mnReward = this.status.reward * .15
     })
   }
-
 }

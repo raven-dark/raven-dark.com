@@ -1,0 +1,46 @@
+@import '../../../styles/variables';
+
+.copy {
+  grid-column-start: 1;
+  grid-column-end: 8;
+}
+.image {
+  grid-column-start: 8;
+  grid-column-end: 15;
+
+  img {
+    // margin-left: -10%;
+    max-width: 160%;
+  }
+}
+.image, .copy {
+  align-self: center;
+}
+.bottom-clip {
+  display: block;
+  background-color: $background;
+  clip-path: url(#bottom-clip);
+  height: 50px;
+  width: 100%;
+}
+.bottom-slash {
+  fill: #2f318f;
+  margin-top: -3%;
+  position: absolute;
+  width: 100%;
+}
+
+@media only screen and (max-width: $medium-width) {
+  .image, .copy {
+    grid-column-start: 1;
+    grid-column-end: 15;
+  }
+
+  .image {
+    img {
+      display: block;
+      margin: 0 0 0 auto;
+      width: 70%;
+    }
+  }
+}

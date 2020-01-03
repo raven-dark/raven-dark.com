@@ -1,0 +1,30 @@
+<div class="grid bleed">
+  <h2>Raven Dark Resources</h2>
+  <div class="item explorer">
+    <img src="/assets/explorer.png"/>
+    <h3>Block Explorer</h3>
+    <ul>
+      <li><a href="http://explorer.raven-dark.com">explorer.raven-dark.com</a></li>
+      <li>Current Supply: {{ supply | number }}</li>
+      <li *ngIf="status !== undefined">Block Height: {{ status.blocks | number }}</li>
+      <li *ngIf="status !== undefined">Current Reward: {{ status.reward }}</li>
+    </ul>
+  </div>
+  <div class="item pools">
+    <img src="/assets/pools.png"/>
+    <h3>Mining Pools</h3>
+    <ul>
+      <li *ngFor="let pool of pools"><a href="{{ pool.url }}">{{ pool.poolName }}</a></li>
+    </ul>
+  </div>
+  <div class="item source">
+    <img src="/assets/source.png"/>
+    <h3>Source Code</h3>
+    <ul>
+      <li><a href="https://github.com/raven-dark/raven-dark">wallet</a></li>
+      <li><a href="https://github.com/raven-dark/explorer">explorer</a></li>
+      <li><a href="https://github.com/raven-dark/pool">pool</a></li>
+      <li><a href="https://github.com/raven-dark/masternode">masternode setup</a></li>
+    </ul>
+  </div>
+</div>

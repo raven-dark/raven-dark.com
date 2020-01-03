@@ -4,16 +4,87 @@ html,
 body {
   background-color: $background;
   color: $text;
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 300;
-  margin: 0 15px 0;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
   padding: 0;
 }
 
-h1,h2,h3,h4,h5 {
-  font-weight: 300;
+h1 {
+  font-size: 58px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 46px;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
 }
 
 a {
   color: $link;
+  text-decoration: none;
+}
+
+.home {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "nav"
+    "first"
+    "second"
+    "third"
+    "fourth"
+    "footer";
+  grid-row-gap: 0;
+}
+
+.hidden {
+  height: 0;
+  width: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  padding: 20px 0;
+}
+
+.bleed {
+  margin: 0 auto;
+  max-width: $max-width;
+  width: 100%;
+}
+
+@media only screen and (max-width: $max-width) {
+  .bleed {
+    max-width: $medium-width;
+  }
+}
+
+@media only screen and (max-width: $medium-width) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h1, h2 {
+    text-align: center;
+  }
+  .bleed {
+    max-width: 90%;
+    width: 90%;
+  }
 }

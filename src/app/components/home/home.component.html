@@ -1,11 +1,21 @@
+<svg class="hidden">
+    <defs>
+        <clipPath id="bottom-clip" clipPathUnits="objectBoundingBox" fill="#fff">
+            <polygon fill="none" points="0 1, 0 0, 1 1"/>
+        </clipPath>
+        <path id="bottom-slash" d="M0 15 L950 34 L0 0 Z" style="stroke: #2f318f;" />
+        <clipPath id="top-clip" clipPathUnits="objectBoundingBox" fill="#fff">
+            <polygon fill="none" points="0 1, 0 0, 1 0"/>
+        </clipPath>
+        <path id="top-slash" d="M0 31 L950 18 L950 0 Z" style="stroke: #2f318f;" />
+    </defs>
+</svg>
+
 <div class="home">
-  <img class="logo" src="/assets/skull.png"/>
-  <h1>raven dark (xrd)</h1>
+  <app-nav class="top"></app-nav>
   <app-about></app-about>
-  <app-basics></app-basics>
-  <app-wallet></app-wallet>
-  <app-explorer></app-explorer>
-  <app-pools></app-pools>
-  <app-source></app-source>
-  <app-social></app-social>
+  <app-basics id="blockchain" class="bleed"></app-basics>
+  <app-wallet id="wallet"></app-wallet>
+  <app-resources id="resources"></app-resources>
+  <app-nav class="bleed" [dark]="true"></app-nav>
 </div>

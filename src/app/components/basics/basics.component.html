@@ -1,9 +1,24 @@
-<app-header [name]="'blockchain'"></app-header>
-<p>
-  - dash + ravencoin x16r algorithm<br>
-  - block time: 60s<br>
-  - block reward: 200 xrd<br>
-  &nbsp;&nbsp;- 85% (170) pow<br>
-  &nbsp;&nbsp;- 15% (30) masternode<br>
-  - masternode requirement: 50,000 xrd<br>
-</p>
+<div class="grid">
+  <div class="image">
+    <img src="/assets/blocks.png"/>
+  </div>
+  <div class="copy">
+    <h2>Raven Dark is a GPU secured blockchain with privacy.</h2>
+    <h3>The Core Blockchain</h3>
+    <p>
+      Raven Dark is built on the Dash codebase (once branded as Darkcoin) and therefore includes the majority of the Dash network's functionality and features, including: Masternodes, PrivateSend and InstantSend
+    </p>
+    <ul>
+      <li>dash + ravencoin x16r algorithm</li>
+      <li>block time: 60s</li>
+      <li *ngIf="status !== undefined">block reward: {{ status.reward }} xrd
+        <ul>
+          <li>85% ({{ powReward }}) pow</li>
+          <li>15% ({{ mnReward }}) masternode</li>
+        </ul>
+      </li>
+      <li>masternode requirement: 50,000 xrd</li>
+    </ul>
+  </div>
+
+</div>

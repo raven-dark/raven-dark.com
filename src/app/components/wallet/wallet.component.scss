@@ -1,0 +1,74 @@
+@import '../../../styles/variables';
+
+.copy {
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+.image {
+  grid-column-start: 7;
+  grid-column-end: 15;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.image, .copy {
+  align-self: center;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.top-clip {
+  display: block;
+  background-color: $background;
+  clip-path: url(#top-clip);
+  height: 50px;
+  width: 100%;
+}
+.top-slash {
+  fill: #2f318f;
+  margin-top: -2%;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.bottom-clip {
+  display: block;
+  background-color: $background-light;
+  clip-path: url(#bottom-clip);
+  height: 50px;
+  margin-bottom: -1px;
+  width: 100%;
+}
+.bottom-slash {
+  fill: #2f318f;
+  margin-top: -3%;
+  position: absolute;
+  width: 100%;
+}
+
+@media only screen and (max-width: $medium-width) {
+  .image, .copy {
+    grid-column-start: 1;
+    grid-column-end: 15;
+  }
+  .copy {
+    margin: 0 auto;
+    width: 70%;
+    h4, ul {
+      margin: 0 auto;
+      width: 80%;
+    }
+  }
+  .image {
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 60%;
+    }
+  }
+}

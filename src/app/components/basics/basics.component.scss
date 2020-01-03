@@ -1,0 +1,34 @@
+@import '../../../styles/variables';
+
+.image {
+  grid-column-start: 1;
+  grid-column-end: 6;
+
+  img {
+    margin-left: -40%;
+    max-width: 140%;
+  }
+}
+.copy {
+  grid-column-start: 7;
+  grid-column-end: 15;
+}
+
+.image, .copy {
+  align-self: center;
+}
+
+@media only screen and (max-width: $medium-width) {
+  .image, .copy {
+    grid-column-start: 1;
+    grid-column-end: 15;
+  }
+
+  .image {
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 60%;
+    }
+  }
+}
